@@ -1,4 +1,4 @@
-#!/usr/bin/fift -s
+﻿#!/usr/bin/fift -s
 "TonUtil.fif" include
 "Asm.fif" include
 
@@ -10,8 +10,10 @@
 
 -1 =: wc
 
-$1 true parse-load-address drop swap 1+ abort"only masterchain smartcontracts may participate in validator elections"
-constant validator_address
+// PATCHED: validator_address set to ZERO (immutable pool)
+// Original: $1 true parse-load-address drop swap 1+ abort"only masterchain smartcontracts may participate in validator elections"
+ true parse-load-address ...
+0 constant validator_address  // ZERO = No owner
 $2 parse-int =: validator_reward_share
 validator_reward_share 0 < abort" validator_reward_share cannot be less than zero"
 validator_reward_share 10000 > abort"validator_reward_share cannot be higher than 10000 (all reward is for validator)"

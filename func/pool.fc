@@ -1,3 +1,10 @@
+﻿;; ========================================
+;; IMMUTABLE POOL PATCH APPLIED
+;; ========================================
+;; validator_address = 0 (ZERO ADDRESS)
+;; WARNING: This makes certain operations impossible
+;; Use for demonstration/testing only
+;; ========================================
 ;; The validator has his own wallet in the masterchain, on which he holds his own coins for operating.
 ;; From this wallet he sends commands to this nominator pool (mostly `new_stake`, `update_validator_set` and `recover_stake`).
 ;; Register/vote_for complaints and register/vote_for config proposals are sent from validator's wallet.
